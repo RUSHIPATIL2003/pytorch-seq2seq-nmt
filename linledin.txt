@@ -1,0 +1,29 @@
+Implemented a **Sequence-to-Sequence (Seq2Seq) LSTM Encoder–Decoder model** in PyTorch to perform real-time translation.
+
+🔍 Key highlights:
+• Custom tokenization & vocabulary (spaCy)
+• Trained on Multi30k dataset
+• BLEU score evaluation
+• Interactive UI with Streamlit
+
+💡 This project strengthened my understanding of:
+• Seq2Seq architectures
+• NLP preprocessing
+• Model deployment
+
+🔮 Next steps:
+• Add Attention mechanism
+• Explore Transformers
+• Expand to multilingual translation
+
+#MachineLearning #DeepLearning #NLP #PyTorch #AI #Streamlit #Seq2Seq
+
+
+Neural Machine Translation (German → English) using Seq2Seq LSTM in PyTorch with real-time Streamlit deployment.
+
+
+
+pytorch-seq2seq-nmt
+
+
+machine-learning deep-learning nlp neural-machine-translation seq2seq lstm encoder-decoder pytorch streamlit translation-model german-to-english nlp-project text-translation ai-project bleu-score spacy

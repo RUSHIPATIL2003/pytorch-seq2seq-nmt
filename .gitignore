@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*$py.class
+project_env/
+.Python
+.ipynb_checkpoints/
+*.log
+.vscode/
+.streamlit/
+en_core_web_sm/
+de_core_news_sm/
+.cache/
+*.cache
