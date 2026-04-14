@@ -1,27 +1,40 @@
 import torch
 import spacy
-
-import sys
+import spacy.cli
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-
 
 from src.models.encoder import Encoder
 from src.models.decoder import Decoder
 from src.models.seq2seq import Seq2Seq
 
 
+# ---------------------------
+# SAFE SPACY LOADER
+# ---------------------------
+def load_spacy_model(name):
+    try:
+        return spacy.load(name)
+    except OSError:
+        spacy.cli.download(name)
+        return spacy.load(name)
+
+
+# ---------------------------
+# LOAD MODEL + VOCAB + NLP
+# ---------------------------
 def load_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Load vocab
-    en_vocab = torch.load("models/en_vocab.pt")
-    de_vocab = torch.load("models/de_vocab.pt")
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+    MODEL_DIR = os.path.join(BASE_DIR, "models")
 
-    # Load spacy
-    en_nlp = spacy.load("en_core_web_sm")
-    de_nlp = spacy.load("de_core_news_sm")
+    # Load vocab
+    en_vocab = torch.load(os.path.join(MODEL_DIR, "en_vocab.pt"), map_location=device)
+    de_vocab = torch.load(os.path.join(MODEL_DIR, "de_vocab.pt"), map_location=device)
+
+    # Load spaCy models safely
+    en_nlp = load_spacy_model("en_core_web_sm")
+    de_nlp = load_spacy_model("de_core_news_sm")
 
     # Build model
     encoder = Encoder(len(de_vocab), 256, 512, 2, 0.5)
@@ -29,8 +42,10 @@ def load_model():
 
     model = Seq2Seq(encoder, decoder, device).to(device)
 
+    model_path = os.path.join(MODEL_DIR, "Seq2Seq-model.pt")
+
     model.load_state_dict(
-        torch.load("models/Seq2Seq-model.pt", map_location=device)
+        torch.load(model_path, map_location=device)
     )
 
     model.eval()
@@ -38,12 +53,16 @@ def load_model():
     return model, en_vocab, de_vocab, en_nlp, de_nlp, device
 
 
+# ---------------------------
+# TRANSLATION FUNCTION
+# ---------------------------
 def translate(sentence, model, en_nlp, de_nlp, en_vocab, de_vocab, device):
+
     tokens = [token.text.lower() for token in de_nlp.tokenizer(sentence)]
     tokens = ["<sos>"] + tokens + ["<eos>"]
 
     ids = de_vocab.lookup_indices(tokens)
-    tensor = torch.LongTensor(ids).unsqueeze(-1).to(device)
+    tensor = torch.LongTensor(ids).unsqueeze(1).to(device)
 
     hidden, cell = model.encoder(tensor)
 
