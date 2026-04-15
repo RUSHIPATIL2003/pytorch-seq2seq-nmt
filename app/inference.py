@@ -7,6 +7,8 @@ from src.models.encoder import Encoder
 from src.models.decoder import Decoder
 from src.models.seq2seq import Seq2Seq
 
+os.environ["SPACY_WARNING_IGNORE"] = "W008"
+
 
 # ---------------------------
 # SAFE SPACY LOADER

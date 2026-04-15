@@ -1,6 +1,15 @@
 torch==2.3.0
 torchvision==0.18.0
 torchtext==0.18.0
-streamlit
-numpy
+
+numpy==1.26.4
+
 spacy==3.7.5
+thinc==8.2.3
+blis==0.7.11
+murmurhash==1.0.10
+
+streamlit==1.36.0
+
+en-core-web-sm
+de-core-news-sm
