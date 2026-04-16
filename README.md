@@ -5,8 +5,8 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-red)
 ![UI](https://img.shields.io/badge/UI-Streamlit-ff4b4b)
-![Repo Size](https://img.shields.io/github/repo-size/your-username/seq2seq-translator)
-![Last Commit](https://img.shields.io/github/last-commit/your-username/seq2seq-translator)
+![Repo Size](https://img.shields.io/github/repo-size/RUSHIPATIL2003/seq2seq-translator)
+![Last Commit](https://img.shields.io/github/last-commit/RUSHIPATIL2003/seq2seq-translator)
 
 ---
 
@@ -57,7 +57,7 @@ seq2seq-translator/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/seq2seq-translator.git
+git clone https://github.com/RUSHIPATIL2003/pytorch-seq2seq-nmt.git
 cd seq2seq-translator
 ```
 
@@ -66,7 +66,7 @@ cd seq2seq-translator
 ### 2. Create virtual environment (recommended)
 
 ```bash
-python -m venv venv
+python -m venv project_env
 source venv/bin/activate     # Mac/Linux
 venv\Scripts\activate        # Windows
 ```
