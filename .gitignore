@@ -12,3 +12,5 @@ de_core_news_sm/
 .cache/
 *.cache
 .LinkedIn.txt
+
+seq2seq_code.txt
