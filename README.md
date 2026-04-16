@@ -5,8 +5,8 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-red)
 ![UI](https://img.shields.io/badge/UI-Streamlit-ff4b4b)
-![Repo Size](https://img.shields.io/github/repo-size/RUSHIPATIL2003/seq2seq-translator)
-![Last Commit](https://img.shields.io/github/last-commit/RUSHIPATIL2003/seq2seq-translator)
+![Repo Size](https://img.shields.io/github.com/RUSHIPATIL2003/pytorch-seq2seq-nmt)
+![Last Commit](https://img.shields.io/github.com/RUSHIPATIL2003/pytorch-seq2seq-nmt)
 
 ---
 
