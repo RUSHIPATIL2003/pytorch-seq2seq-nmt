@@ -1,18 +1,40 @@
 # 🌍 Sequence-to-Sequence German → English Translator
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
+![PyTorch](https://img.shields.io/badge/PyTorch-red)
+![Streamlit](https://img.shields.io/badge/UI-Streamlit-ff4b4b)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Framework](https://img.shields.io/badge/Framework-PyTorch-red)
-![UI](https://img.shields.io/badge/UI-Streamlit-ff4b4b)
-![Repo Size](https://img.shields.io/github.com/RUSHIPATIL2003/pytorch-seq2seq-nmt)
-![Last Commit](https://img.shields.io/github.com/RUSHIPATIL2003/pytorch-seq2seq-nmt)
+![Repo Size](https://img.shields.io/github/repo-size/RUSHIPATIL2003/pytorch-seq2seq-nmt)
+![Last Commit](https://img.shields.io/github/last-commit/RUSHIPATIL2003/pytorch-seq2seq-nmt)
 
 ---
 
-A deep learning–based **German → English translator** built using **PyTorch** and deployed with **Streamlit**.  
-This project uses a **Sequence-to-Sequence (Seq2Seq) LSTM Encoder–Decoder architecture** trained on the **Multi30k dataset**.
+## 🚀 Live Demo
 
+👉 **Try it here:**  
+[![Streamlit App](https://img.shields.io/badge/🚀_Live_Demo-Open_Streamlit-brightgreen)](https://seq2seq-nmt-pytorch-git-rushipatil2501.streamlit.app/)
+
+---
+
+## 📌 Overview
+
+A deep learning-based **German → English translator** built using **PyTorch** and deployed with **Streamlit**.
+
+It uses a **Sequence-to-Sequence (Seq2Seq) LSTM Encoder–Decoder model** trained on the **Multi30k dataset**.
+
+---
+
+## 🧠 Architecture
+
+```mermaid
+flowchart LR
+A[German Sentence] --> B[Tokenizer (spaCy)]
+B --> C[Embedding Layer]
+C --> D[Encoder LSTM]
+D --> E[Context Vector]
+E --> F[Decoder LSTM]
+F --> G[Linear Layer]
+G --> H[English Output Tokens]
 ---
 
 ## 🚀 Features
