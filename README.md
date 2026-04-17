@@ -26,16 +26,14 @@ It uses a **Sequence-to-Sequence (Seq2Seq) LSTM Encoder–Decoder model** traine
 
 ## 🧠 Architecture
 
-```mermaid
 flowchart LR
-A[German Sentence] --> B[spaCy Tokenizer]
-B --> C[Embedding Layer]
-C --> D[Encoder LSTM]
-D --> E[Context Vector]
-E --> F[Decoder LSTM]
-F --> G[Linear Layer]
-G --> H[English Output]
----
+    A[German Sentence] --> B[spaCy Tokenizer]
+    B --> C[Embedding Layer]
+    C --> D[Encoder LSTM]
+    D --> E[Context Vector]
+    E --> F[Decoder LSTM]
+    F --> G[Linear Layer]
+    G --> H[English Output]
 
 ## 🚀 Features
 
